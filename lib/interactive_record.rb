@@ -3,10 +3,11 @@ require 'active_support/inflector'
 
 class InteractiveRecord
 
+  #creating table name dynamicly
   def self.table_name
     self.to_s.downcase.pluralize
   end
-
+    #creating table column dynamicly
   def self.column_names
     DB[:conn].results_as_hash = true
 
